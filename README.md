@@ -69,6 +69,6 @@ services:
 - Default directory: `/var/www/html`
 - Nginx root directory: `/var/www/html/public`
 - Nginx default config: `/etc/nginx/nginx.conf`
-- Nginx default host: `/etc/nginx/modules/nginx-laravel.conf`
+- Nginx default host: `/etc/nginx/http.d/default.conf`
 - PHP default config: `/etc/php81/php.ini`
 - PHP FPM default config: `/etc/php81/php-fpm.conf`
