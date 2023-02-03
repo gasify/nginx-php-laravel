@@ -61,7 +61,7 @@ COPY .docker/php-fpm.conf /etc/php81/php-fpm.conf
 
 # CONFIGURE NGINX
 COPY .docker/nginx.conf /etc/nginx/
-COPY .docker/nginx-laravel.conf /etc/nginx/modules/
+COPY .docker/nginx-laravel.conf /etc/nginx/http.d/default.conf
 
 RUN mkdir -p /run/nginx/ && touch /run/nginx/nginx.pid
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
