@@ -71,7 +71,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/
 RUN mkdir -p /var/www/html/public && echo "<?php phpinfo(); ?>" >> /var/www/html/public/index.php
 
 # RUN SUPERVISOR
-CMD ["supervisord", "-c", "/etc/supervisor.d/supervisord.ini", "-l", "/dev/stdout", "-j", "/etc/supervisor.d/supervisord.pid"]
+CMD ["supervisord", "-c", "/etc/supervisor.d/supervisord.ini", "-l", "/etc/supervisor.d/supervisord.log", "-j", "/etc/supervisor.d/supervisord.pid"]
 
 # EXPOSE
 EXPOSE 80
