@@ -37,6 +37,7 @@ RUN apk update && apk add --no-cache \
     php81-phar \
     php81-posix \
     php81-session \
+    php81-simplexml \
     php81-soap \
     php81-tokenizer \
     php81-xml \
