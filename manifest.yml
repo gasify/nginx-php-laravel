@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: laravel-app
+  name: laravel-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: laravel-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: laravel-app
+    spec:
+      containers:
+      - image: gcr.io/gke-learn-384702/nginx-php-laravel:v1
+        name: backend
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 80 
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: laravel-app
+  labels:
+    run: laravel-app
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: laravel-app
+  type: LoadBalancer
